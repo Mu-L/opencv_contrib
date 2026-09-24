@@ -207,8 +207,8 @@ PERF_TEST_P(WarpAffinePerfTest, run, ::testing::Combine(
     float tx = static_cast<float>(std::rand() % 100) - 50; // Random translation between -50 and 50
     float ty = static_cast<float>(std::rand() % 100) - 50; // Random translation between -50 and 50
     float radians = angle * CV_PI / 180.0;
-    cv::Mat affine = cv::Mat_<float>({2, 3}, { scale * cos(radians), -scale * sin(radians), tx,
-                                               scale * sin(radians),  scale * cos(radians), ty});
+    cv::Mat affine = cv::Mat_<float>({2, 3}, { (float)(scale * cos(radians)), (float)(-scale * sin(radians)), tx,
+                                               (float)(scale * sin(radians)),  (float)(scale * cos(radians)), ty});
 
     // Compute the inverse affine matrix
     cv::Mat inverseAffine = getInverseAffine(affine);

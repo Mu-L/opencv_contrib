@@ -1,4 +1,4 @@
-if(NOT HAVE_QT OR NOT HAVE_CXX11 OR QT_VERSION_MAJOR LESS 5)
+if(NOT HAVE_QT OR QT_VERSION_MAJOR LESS 5)
   ocv_module_disable(cvv)
   return()
 endif()

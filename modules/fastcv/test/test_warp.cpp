@@ -156,7 +156,7 @@ TEST(WarpAffineROITest, accuracy)
 
     float angle = 180.0; // Rotation angle in degrees
     float radians = angle * CV_PI / 180.0;
-    cv::Mat affine = cv::Mat_<float>({2, 2}, {cos(radians), -sin(radians), sin(radians), cos(radians)});
+    cv::Mat affine = cv::Mat_<float>({2, 2}, {(float)cos(radians), (float)-sin(radians), (float)sin(radians), (float)cos(radians)});
 
     cv::Mat patch;
     cv::Mat roi = src(cv::Rect(0, 0, 100, 100));
